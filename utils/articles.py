@@ -2,9 +2,10 @@ from scraper import ScrapData
 
 class Articles():
 
+    # Extracting articles from home page
     def all_articles(page = 1, category = ""):
         """Enter page number to fetch"""
-        
+
         if (category !=  ""):
             endpoint = f"{'/' + category}/?page={page}"
         else:
@@ -38,6 +39,20 @@ class Articles():
 
         except Exception as e:
             return e
+
+    
+    # Extracting articles details date
+    def articles_body(endpoint = "/sports/asia-cup-most-successful-wicketkeepers-9523-15-08-2022"):
+        """provide article endpoint to get data"""
+
+        try:
+            
+
+
+
+
+
+    
             
 
 
