@@ -1,15 +1,23 @@
-from scraper import ScrapData
+from utils.scraper import ScrapData
+# from scraper import ScrapData
 
 class Articles():
 
     # Extracting articles from home page
-    def all_articles(page = 1, category = ""):
+    def all_articles(page = 1, category = "sports"):
         """Enter page number to fetch"""
 
-        if (category !=  ""):
-            endpoint = f"{'/' + category}/?page={page}"
+        if (category != ""):
+            if (category == "all"):
+                endpoint = f"/?page={page}"
+            else:
+                endpoint = f"{'/' + category}/?page={page}"
+
         else:
             endpoint =  f"/?page={page}"
+
+        # dev settings
+        # final_data = {"category": category, "endpoint": endpoint, "data": []}
         final_data = []
         id = 0;
 
@@ -30,7 +38,7 @@ class Articles():
                     "date": date.text,
                     "image_url": img_url["data-src"]
                 }
-
+                # final_data["data"].append(data_lst)
                 final_data.append(data_lst)
                 id+=1
 
@@ -79,7 +87,7 @@ class Articles():
 
             
 
-
+# print(Articles.all_articles())
 
 
 
