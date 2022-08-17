@@ -6,5 +6,5 @@ https://visual-articles-api-wantedbear007.vercel.app/
 https://visual-articles-api.vercel.app/
 
 # endpoints
-/api/articles/all/1
+/api/articles/all/1<br>
 /api/story/?endpoint=/sports/zimbabwe-tour-5-indians-to-watch-out-for-9571-17-08-2022
