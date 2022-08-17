@@ -45,7 +45,38 @@ class Articles():
     def articles_body(endpoint = "/sports/asia-cup-most-successful-wicketkeepers-9523-15-08-2022"):
         """provide article endpoint to get data"""
 
+        all_stories = []
+        id = 0
+
         try:
+            site_content = ScrapData.scrap(endpoint=endpoint)
+            containers = site_content.find_all("amp-story-page")
+
+            for container in containers:
+                try:
+                    image = container.find("amp-img")
+                    desc = container.find("p").text
+
+                except:
+                    pass
+                
+                if (image != None and desc != None):
+
+                    story  = {
+                        "id" : id,
+                        "title": desc,
+                        "img": image["src"]
+                    }
+                    id += 1
+                    all_stories.append(story)
+
+            return all_stories[1:]
+
+
+        except Exception as e:
+            return e
+
+
             
 
 
@@ -57,4 +88,4 @@ class Articles():
 
 
 
-print(Articles.all_articles(page = 1, category = "technology"))
+# print(Articles.articles_body("/sports/zimbabwe-tour-5-indians-to-watch-out-for-9571-17-08-2022"))
