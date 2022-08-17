@@ -1,7 +1,7 @@
 # visual_articles-API
 Visual stories api written in fast api with bs4 as scraping tool
 
-#base url
+<h2>Base URL</H2> <BR>
 https://visual-articles-api-wantedbear007.vercel.app/ <br>
 https://visual-articles-api.vercel.app/
 
